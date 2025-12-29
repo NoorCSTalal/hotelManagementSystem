@@ -9,8 +9,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class HotelSystem {
-    //ليش ستستيك وليش فوق المين؟
-
+  
     static ArrayList<Accommodation> list = new ArrayList<>();
     static ArrayList<Reservation> reservelist = new ArrayList<>();
     static Scanner input = new Scanner(System.in);
@@ -50,7 +49,7 @@ public class HotelSystem {
                         System.out.println("Total Accommodation: " + Accommodation.getNumOFUnits());//calling static method
                         break;
 
-                    case 4:  //يكوون سويتش داخل سويتش  المطعم
+                    case 4:  //restraunt
                         System.out.println(" Welcome to the Hotel Restaurant! ");
                         Restraunt restaurant = new Restraunt("Grand Hotel Restaurant", 3);
 
@@ -160,14 +159,14 @@ public class HotelSystem {
 
                         if (target instanceof Room) {
 
-                            // رسالة الترقية
+                           
                             String msg = ((Room) target).UpgradeToSuite();
                             System.out.println(msg);
 
-                            // توليد رقم سويت جديد
+                           
                             String newSuiteNumber = "S" + (list.size() + 200);
 
-                            // إنشاء سويت جديدة
+                           
                             SUITE newSuite = new SUITE(
                                     newSuiteNumber,
                                     target.getPricePerNight() + 300,
@@ -176,7 +175,7 @@ public class HotelSystem {
                                     3
                             );
 
-                            // استبدال الغرفة القديمة بالسويت
+                            
                             int index = list.indexOf(target);
                             list.set(index, newSuite);
 
@@ -184,7 +183,7 @@ public class HotelSystem {
                             System.out.println("New Suite Number: " + newSuiteNumber);
                             System.out.println("--------------------------------");
 
-                            continue;  // ⭐ الحل للمشكلة 2 — يكمل البرنامج بدون ما يوقف
+                            continue;  
                         } else {
                             System.out.println("This type cannot be upgraded!");
                         }
@@ -245,7 +244,7 @@ public class HotelSystem {
         int type = input.nextInt();
 
         Accommodation accommodation = null;
-        String roomNumber = "R" + (list.size() + 100); // يولّد رقم تلقائي
+        String roomNumber = "R" + (list.size() + 100); 
         double price = 0;
 
         switch (type) {
@@ -289,7 +288,7 @@ public class HotelSystem {
                 System.out.print("Do you want buffet service? (true/false): ");
                 boolean hasBuffet = input.nextBoolean();
 
-                // نحسب السعر بناءً على السعة ونوع القاعة
+              
                 price = 1500 + (capacity * 10);
                 if (hasBuffet) {
                     price += 500;
@@ -308,9 +307,9 @@ public class HotelSystem {
 
         list.add(accommodation);
 
-        // 🔹 بعد ما نضيف الحجز، نطلب بيانات الضيف
+        
         System.out.print("Enter guest name: ");
-        input.nextLine(); // تنظيف السطر
+        input.nextLine(); 
         String guestName = input.nextLine();
 
         System.out.print("Enter guest number: ");
@@ -319,14 +318,14 @@ public class HotelSystem {
         System.out.print("Enter number of nights: ");
         int numnight = input.nextInt();
 
-        // 🔹 إنشاء كائن Guest
+       
         Guest guest = new Guest(guestName, guestNum);
 
-        // 🔹 إنشاء Reservation جديد
+        
         Reservation reservation = new Reservation(1, numnight, "Pending", accommodation, guest);
         reservelist.add(reservation);
 
-        // 🔹 طباعة تفاصيل الحجز
+        
         System.out.println("\n Booking completed successfully!");
         System.out.println("----------------------------");
         System.out.println("Reservation ID: " + reservation.getRESERVATION_ID());
@@ -368,10 +367,11 @@ public class HotelSystem {
         list.add(new SingleRoom(" Standard Single Room ", 299.0, true, true));
         list.add(new DoubleRoom(" Deluxe Double Room ", 500.0, true, "One King Size Bed"));
 
-        // 🔹 إضافة قاعات (Halls)
+        
         //  public Hall(String RoomNumber, double pricePerDay,boolean Available, int capacity, String type, boolean hasBuffet  ) {
         list.add(new Hall("H301", 2500.0, true, 150, "Wedding", true));
         list.add(new Hall("H302", 1800.0, true, 80, "Conference", false));
     }
 
 }
+
