@@ -17,7 +17,7 @@ public class HotelSystem {
     public static void main(String[] args) {
 
         int choice = 0;
-        fillList(list); //ميثود جتهز داخل الاراي ليست لتعبئة الاراي
+        fillList(list); 
         System.out.println("***** WELCOME TO  WAN HOTEI MANAGEMENT SYSTEM *****");
         do {
             try {
@@ -145,7 +145,7 @@ public class HotelSystem {
 
                         for (Accommodation a : list) {
 
-                            // الحل للمشكلة 1
+                            
                             if (a.getRoomNumber().trim().equalsIgnoreCase(roomNum.trim())) {
                                 target = a;
                                 break;
@@ -154,7 +154,7 @@ public class HotelSystem {
 
                         if (target == null) {
                             System.out.println("Room not found!");
-                            continue; // يرجع للقائمة بدون ما يقفل البرنامج كانت break
+                            continue; 
                         }
 
                         if (target instanceof Room) {
@@ -279,7 +279,7 @@ public class HotelSystem {
 
             case 4:
                 System.out.print("Enter hall type (Wedding/Conference/Party): ");
-                input.nextLine(); // تنظيف السطر
+                input.nextLine(); 
                 String hallType = input.nextLine();
 
                 System.out.print("Enter hall capacity: ");
@@ -359,7 +359,7 @@ public class HotelSystem {
         }
     }
 
-    // methood filllist*
+    // methood fillist*
     public static void fillList(ArrayList<Accommodation> list) {
         list.add(new SUITE("AS105", 1200.0, true, 4, 5));
         list.add(new SUITE("BG413", 975.0, true, 3, 4));
@@ -374,4 +374,5 @@ public class HotelSystem {
     }
 
 }
+
 
