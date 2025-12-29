@@ -9,7 +9,7 @@ package hotelsystem;
     private String mealType;
     private double price;
 
-    // القوائم
+    
     private String[] breakfastMenu = {"1. Pancakes - 8 SAR", "2. Omelette - 10 SAR", "3. Waffles - 9 SAR"};
     private double[] breakfastPrices = {8, 10, 9};
 
@@ -36,26 +36,26 @@ package hotelsystem;
         return price;
     }
 
-    // عرض القوائم
+    
     public void showBreakfastMenu() {
-        System.out.println("\n🍳 Breakfast Menu:");
+        System.out.println("\n Breakfast Menu:");
         for (String item : breakfastMenu)
             System.out.println(item);
     }
 
     public void showLunchMenu() {
-        System.out.println("\n🍔 Lunch Menu:");
+        System.out.println("\n Lunch Menu:");
         for (String item : lunchMenu)
             System.out.println(item);
     }
 
     public void showDinnerMenu() {
-        System.out.println("\n🍝 Dinner Menu:");
+        System.out.println("\n Dinner Menu:");
         for (String item : dinnerMenu)
             System.out.println(item);
     }
 
-    // ميثود ترجع السعر حسب اختيار المستخدم
+    
     public double getDishPrice(int choice) {
         switch (mealType.toLowerCase()) {
             case "breakfast":
@@ -69,7 +69,7 @@ package hotelsystem;
         }
     }
 
-    // toString
+    
     @Override
     public String toString() {
         return "Meal Type: " + mealType + ", Price: SAR" + price;
@@ -77,4 +77,5 @@ package hotelsystem;
 }
 
    
+
    
