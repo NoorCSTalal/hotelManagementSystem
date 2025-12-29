@@ -18,7 +18,7 @@ package hotelsystem;
      
      public DoubleRoom() {
         super();
-        this.bedType = "Queen"; //او كينغ؟
+        this.bedType = "Queen"; 
     }
 
     public String getBedType() {
@@ -59,4 +59,5 @@ package hotelsystem;
         System.out.println(" Wi-Fi , Mini Bar ,Extra Bed");
 
     }
+
 }
