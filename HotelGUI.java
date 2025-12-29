@@ -85,7 +85,7 @@ public class HotelGUI extends Application {
         checkBtn.setOnAction(e -> {
             String input = idField.getText().trim();
             if (input.isEmpty()) {
-                infoArea.setText("⚠️ Please enter your reservation ID.");
+                infoArea.setText(" Please enter your reservation ID.");
                 return;
             }
 
@@ -102,12 +102,12 @@ public class HotelGUI extends Application {
                 }
 
                 if (found == null) {
-                    infoArea.setText("❌ No reservation found with this ID.");
+                    infoArea.setText(" No reservation found with this ID.");
                     serviceBtn.setDisable(true);
                 } else {
                     Accommodation acc = found.getAccommodation();
                     infoArea.setText(
-                            "✅ Reservation Found!\n\n" +
+                            " Reservation Found!\n\n" +
                                     "Guest: " + found.getGuest().getGuestName() + "\n" +
                                     "Reservation ID: " + found.getRESERVATION_ID() + "\n" +
                                     "Room Number: " + acc.getRoomNumber() + "\n" +
@@ -123,7 +123,7 @@ public class HotelGUI extends Application {
                 }
 
             } catch (NumberFormatException ex) {
-                infoArea.setText("❗ Reservation ID must be a number.");
+                infoArea.setText(" Reservation ID must be a number.");
             }
         });
 
@@ -175,3 +175,4 @@ public class HotelGUI extends Application {
         launch(args);
     }
 }
+
