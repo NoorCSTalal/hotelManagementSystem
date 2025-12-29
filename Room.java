@@ -24,7 +24,7 @@ package hotelsystem;
     
     
    // Abstract methods (must be implemented by subclasses)
-    public abstract String UpgradeToSuite();  // غيرت التايب لسترينق افضل 
+    public abstract String UpgradeToSuite();  
     public abstract int NumOfBeds();
     public abstract String RoomService();
     
@@ -40,4 +40,5 @@ package hotelsystem;
     }
     
 }
+
 
