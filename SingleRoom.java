@@ -19,7 +19,7 @@ public class SingleRoom extends Room{
     
     public SingleRoom() {
         super();
-        this.hasDesk = false; //احط ترو؟
+        this.hasDesk = false; 
     }
 
     public boolean isHasDesk() {
@@ -39,7 +39,7 @@ public class SingleRoom extends Room{
     public int NumOfBeds() {
         return 1;
     }
-    @Override //اغير العباره? 
+    @Override 
     public String RoomService() {
         return "Single room service: breakfast delivery and daily cleaning.";
     }
@@ -58,4 +58,5 @@ public class SingleRoom extends Room{
         System.out.println("Desk and Wi-Fi");
     }
     
+
     }
